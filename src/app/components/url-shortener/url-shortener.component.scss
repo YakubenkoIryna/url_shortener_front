@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  margin: 10% auto;
+  width: 50%;
+  border: 1px solid grey;
+  padding: 3%;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.shortener {
+
+  &_search {
+    width: 72%;
+    height: 25px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  &_btn {
+    height: 30px;
+
+    &[disabled] {
+      cursor: no-drop;
+    }
+  }
+
+  &_url {
+
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+    }
+
+    &__link{
+      margin-left: 15px;
+      color: darkblue;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="container">
+<h1 class="shortener_title">URL Shortener</h1>
+  <form [formGroup]="form" class="shortener_form">
+    <input placeholder="Paste your URL" formControlName="urlLink" class="shortener_search" type="text">
+    <button
+      *ngIf="!isLoading"
+      class="shortener_btn"
+      (click)="getShortenURL()"
+      [disabled]="form.invalid"
+    >Generate
+    </button>
+    <app-loader *ngIf="isLoading"></app-loader>
+  </form>
+  <div *ngIf="shortenerUrl.length" class="shortener_url__wrapper">
+    <p>Your Shortened URL:</p>
+    <p (click)="openLink()" class="shortener_url__link"> {{ shortenerUrl }}</p>
+  </div>
+</div>
